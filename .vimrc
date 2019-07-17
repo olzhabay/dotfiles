@@ -1,5 +1,4 @@
 " vim : foldmethod=marker :
-" AUTHOR: Vicente Adolfo Bolea Sanchez
 " Dependencies:
 "  - It requires to have the following env variables:
 "    1. $CLANG_COMPLETE_LIB
@@ -21,7 +20,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise'
-Plugin 'Rip-Rip/clang_complete'
+"Plugin 'Rip-Rip/clang_complete'
 Plugin 'ctrlp.vim'
 Plugin 'linediff.vim'
 Plugin 'mattn/webapi-vim'
@@ -29,16 +28,21 @@ Plugin 'mattn/gist-vim'
 call vundle#end()
 " }}}
 " Main options {{{
-filetype plugin indent on
+filetype plugin indent off
 filetype plugin on
-filetype indent on
+filetype indent off
+set autoindent
 syntax on
 
+" turn absolute line numbers on
+set number
+set nu
+
 " This is VIM we don't need arrow keys
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
 " }}}
 " Interface settings {{{
 "## 256 terminal
@@ -47,14 +51,14 @@ let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 set background=dark
 colorscheme solarized 
-set term=screen-256color
+set term=xterm-256color
 
 "## More options
 set ruler
 set incsearch
 set hlsearch
 set wildmenu
-set hidden  " Useful feature, to have multiples buffer open
+"set hidden  " Useful feature, to have multiples buffer open
 
 "## Cursor
 set cursorline
@@ -74,17 +78,22 @@ set t_vb=
 set lazyredraw
 
 "Indentation
-set shiftwidth=2
-set expandtab
-set tabstop=2
-set backspace=2
+set shiftwidth=3
+"set expandtab
+set tabstop=3
+"set backspace=3
 set foldmethod=marker
 set cino=N-s
+" for command mode
+nnoremap <S-Tab> <<
+" for insert mode
+inoremap <S-Tab> <C-d>
+inoremap <Nul> <C-n>
 
 "uncategorized
+set mouse=a
 set exrc
 set wildignore=*.o,*.class,*.pyc
-set mouse=a
 
 " }}}
 " filetype settings {{{
@@ -110,31 +119,14 @@ if has('gui_running')
   set guioptions-=L  "remove left-hand scroll bar
 endif
 " }}}
-"Autocomplete  {{{
-set dictionary+=/usr/share/dict/words
-set tags+=.tags
-set completeopt=menuone,menu,longest
-
-" clang_complete
-" ----------------------------------------------------
-if empty($CLANG_COMPLETE_LIB) 
-  let g:clang_complete_loaded = 1
-endif
-
-let g:clang_library_path    = $CLANG_COMPLETE_LIB
-let g:clang_auto_select     = 1
-let g:clang_complete_auto   = 0
-let g:clang_snippets        = 1
-let g:clang_snippets_engine = 'ultisnips'
-"}}}
 "Key-binding {{{
 " ---------------------------------------------------------------------
 let mapleader = " "
 
-noremap  <Up>     <NOP>
-noremap  <Down>   <NOP>
-noremap  <Left>   <NOP>
-noremap  <Right>  <NOP>
+"noremap  <Up>     <NOP>
+"noremap  <Down>   <NOP>
+"noremap  <Left>   <NOP>
+"noremap  <Right>  <NOP>
 nnoremap Q <Nop>
 
 " Tabs
@@ -190,16 +182,8 @@ let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
 let g:SuperTabDefaultCompletionType = "<C-n>"
 "}}}
-" Signature {{{
-let g:snips_author = $GIT_AUTHOR_NAME
-" }}}
 " Fugitive {{{
 set diffopt+=vertical
 set updatetime=250
 " }}}
-" gist {{{
-let g:gist_detect_filetype = 1
-let g:gist_post_private = 1
-let g:gist_post_anonymous = 0
-" }}}
-source ~/.vimrc.local
+"source ~/.vimrc.local"
