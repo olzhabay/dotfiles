@@ -87,16 +87,12 @@ nnoremap <S-Tab> <<
 " for insert mode
 inoremap <S-Tab> <C-d>
 inoremap <Nul> <C-n>
-inoremap <C-BS> <C-w>
 
 "uncategorized
-nnoremap * *``
-nnoremap # *``
 set mouse=a
 set exrc
 set wildignore=*.o,*.class,*.pyc
 
-" filetype settings 
 highlight BadWhitespace ctermbg=red guibg=darkred
 autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd BufEnter,BufNew *.log setlocal nowrap
@@ -179,3 +175,4 @@ let g:SuperTabDefaultCompletionType = "<C-n>"
 " ---------------------------------------------------------------------
 set diffopt+=vertical
 set updatetime=250
+"source ~/.vimrc.local"
