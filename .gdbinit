@@ -4196,10 +4196,14 @@ end
 
 set print pretty on
 set print object on
-set print static-members on
+#set print static-members on
 set print vtbl on
+set print static off
 set print demangle on
+set print asm-demangle on
 set demangle-style gnu-v3
 set print sevenbit-strings off
 #context-off
 set history save on
+# tacc gdb
+source /src/tacc/utils/tacgdb.py
