@@ -207,3 +207,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[user]
+	email = olzhabay.i@gmail.com
+	name = Olzhas Kaiyrakhmet

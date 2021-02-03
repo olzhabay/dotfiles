@@ -17,7 +17,7 @@
 $ sudo apt-get install git
 
 # Then, clone the repository and install the dotfiles:
-$ git clone --recursive https://github.com/vicentebolea/dotfiles.git .dotfiles && cd .dotfiles && ./bin/dfm install && vim -c 'PluginUpdate'
+$ git clone --recursive https://github.com/olzhabay/dotfiles.git .dotfiles && cd .dotfiles && ./bin/dfm install && vim -c 'PluginUpdate'
 ```
 
 ### How to update it
@@ -33,9 +33,3 @@ $ cd ~/.dotfiles && git fetch --all && git reset --hard origin/master
  - [DFM][dfm]:                    a.k.a Dot Files Manager, made possible having the dotfiles in a separated directory.
  - [mathiasbynens/dotfiles][mat]: Some of the ideas are taking from this repository.
 
-<!-- Links -->
-[dfm]:     https://github.com/justone/dfm
-[mat]:     https://github.com/mathiasbynens/dotfiles
-[vicente]: https://github.com/vicentebolea
-[dicl]:    http://dicl.unist.ac.kr
-[conv]:    https://github.com/vicentebolea/dotfiles/issues/3
