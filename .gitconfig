@@ -2,6 +2,7 @@
   path = ~/.gitconfig.local
 [core] 
   editor = vim 
+	autocrlf = true
 [color]
   ui = auto
 [color "branch"]
@@ -210,3 +211,5 @@
 [user]
 	email = olzhabay.i@gmail.com
 	name = Olzhas Kaiyrakhmet
+[init]
+	defaultBranch = main
