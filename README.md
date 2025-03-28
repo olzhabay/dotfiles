@@ -17,7 +17,7 @@
 $ sudo apt-get install git
 
 # Then, clone the repository and install the dotfiles:
-$ git clone --recursive https://github.com/olzhabay/dotfiles.git .dotfiles && cd .dotfiles && ./bin/dfm install && vim -c 'PluginUpdate'
+$ git clone --recursive git@github.com:olzhabay/dotfiles.git .dotfiles && cd .dotfiles && ./bin/dfm install && vim -c 'PluginUpdate'
 ```
 
 ### How to update it
