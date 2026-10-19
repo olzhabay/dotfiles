@@ -1,5 +1,6 @@
 [ ! "$ARTOOLS_NOPROMPTMUNGE" == "1" ] && [ -z "$PS1" ] && return
 
+
 compile_prompt() {
    shopt -s histappend                            # Add history from all the terminal opened
    shopt -s checkwinsize                          # Keep checking terminal size
@@ -78,5 +79,13 @@ export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export JAVA_HOME=/home/olzhas/.jdks/jbr-21.0.9/
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PATH=$PATH:$HOME/minio-binaries
+export LC_ALL=en_US.UTF-8
+
+# turnoff mouse
+export CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1
+
